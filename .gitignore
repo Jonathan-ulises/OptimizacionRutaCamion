@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+*HERE-sdk.arr
+*HERE-sdk-javadoc.jar
