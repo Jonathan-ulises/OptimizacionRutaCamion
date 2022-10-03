@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RutaDeCamion"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter android:label="Enviar datos de destino">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="geo"/>
+            </intent-filter>
+
+        </activity>
+
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="Mii6KGQG8aBQIIkLpgbD" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="KLkE93cZiZC46Xjs6tFubw" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="X0bT1mRAh7QxD1LGYTLmLrmA3hWZ1BwzEvltc+SnL2sQofXOGP1NyDHEwtxmqWFAPlTLJSiRiYUlK6X97Dc9sijBqeO7xr6hZDJPRq6TjxnulBVD+LVaL6gWptxFV9+038b9rTj78+jrTGL9iWxRPcmSHIBVuRnLVE2kmwy2s0uHTNriD5DgdyFLII/OZ0p4Elv7hutKGiZtuarsC0r6UUjzAh2zzsVz9CYgQeKigZmddlFYfFl1W1VZniIGneXk9xqcS5/Lmit0Q36agTD/ME1wcQ8o1UirXz4ChY1gg8Z/j4HOuDIKPVgqHS4jAR4t00wzy5ECdBYFWr9/azTERuNWmTxQ8qVvtngiVpVbY/9pjNZNDJWG8D5ZEp3un1ie/l6u/TvqmwTH4sfUdKYbn9oACXTyD/Uit8WCf2+kJ6txF+Zy2slq0HZrCT+uTf+eoBlu0x+0W85ID8rRrU7QUkOl95VDM7Rwdi3MtJdElYTF73JRqcN9cLsD0dA9lKQg2SvGqIm+jkHDb/nhZqhoDBzQNm7HKbBQtjVcl1Ab/fzNMbvEH4gVMNPn/+t9PW5L3BvrHa+iC3Bsag/yXteqyABG142peybXPTYRVwR7sO255AgRJDYfDq2OaGtjlVpuE5O8pIfhV5j2YTER28OcK0QnpdmgyMmnhyVO54d41e4=" />
+
+
+        <service android:name=".ForegroundService" />
+    </application>
+
+</manifest>
